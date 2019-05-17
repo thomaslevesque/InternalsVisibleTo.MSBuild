@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>InternalsVisibleTo.MSBuild</id>
+        <version>1.0.0-alpha.1</version>
+        <description>Enables declaring 'InternalsVisibleTo' items in a .NET froject file, rather than declaring them to an AssemblyInfo.cs file.</description>
+        <authors>Thomas Levesque</authors>
+    </metadata>
+    <files>
+        <file src="**/*.targets" target="" />
+    </files>
+</package>
