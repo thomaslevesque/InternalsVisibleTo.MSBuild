@@ -1,6 +1,6 @@
 # InternalsVisibleTo.MSBuild
 
-Enables declaring `InternalsVisibleTo` items in a .NET froject file, rather than declaring them to an AssemblyInfo.cs file.
+Enables declaring `InternalsVisibleTo` items in a .NET project file, rather than declaring them to an AssemblyInfo.cs file.
 
 ## How to use
 
