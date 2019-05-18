@@ -1,5 +1,7 @@
 # InternalsVisibleTo.MSBuild
 
+[![NuGet version](https://img.shields.io/nuget/v/InternalsVisibleTo.MSBuild.svg?logo=nuget)](https://www.nuget.org/packages/InternalsVisibleTo.MSBuild)
+
 Enables declaring `InternalsVisibleTo` items in a .NET project file, rather than declaring them to an AssemblyInfo.cs file.
 
 ## How to use
