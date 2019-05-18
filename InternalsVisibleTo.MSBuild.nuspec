@@ -5,6 +5,10 @@
         <version>1.0.0-alpha.1</version>
         <description>Enables declaring 'InternalsVisibleTo' items in a .NET froject file, rather than declaring them to an AssemblyInfo.cs file.</description>
         <authors>Thomas Levesque</authors>
+        <projectUrl>https://github.com/thomaslevesque/InternalsVisibleTo.MSBuild</projectUrl>
+        <license type="expression">MIT</license>
+        <tags>msbuild internalsvisibleto csproj vbproj</tags>
+        <repository type="git" url="https://github.com/thomaslevesque/InternalsVisibleTo.MSBuild.git" />
     </metadata>
     <files>
         <file src="**/*.targets" target="" />
