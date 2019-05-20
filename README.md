@@ -25,9 +25,11 @@ This will generate the appropriate `InternalsVisibleTo` attributes for your asse
 In fact, it's already possible to declare `InternalsVisibleTo` attributes in the project file without this package, but the syntax is ugly and hard to remember:
 
 ```xml
-      <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
-        <_Parameter1>SomeOtherAssembly</_Parameter1>
-      </AssemblyAttribute>
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+      <_Parameter1>SomeOtherAssembly</_Parameter1>
+    </AssemblyAttribute>
+  <ItemGroup>
 ```
 
 This package just makes things easier by transforming `<InternalsVisibleTo>` elements into appropriate `<AssemblyAttribute>` elements.
