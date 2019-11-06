@@ -10,6 +10,7 @@
         <developmentDependency>true</developmentDependency>
         <tags>msbuild internalsvisibleto csproj vbproj</tags>
         <repository type="git" url="https://github.com/thomaslevesque/InternalsVisibleTo.MSBuild.git" />
+        <releaseNotes>https://github.com/thomaslevesque/InternalsVisibleTo.MSBuild/releases</releaseNotes>
     </metadata>
     <files>
         <file src="**/*.targets" target="" />
