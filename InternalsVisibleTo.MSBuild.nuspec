@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>InternalsVisibleTo.MSBuild</id>
-        <version>1.0.3</version>
+        <version>1.0.4</version>
         <description>Enables declaring 'InternalsVisibleTo' items in a .NET project file, rather than declaring them to an AssemblyInfo.cs file.</description>
         <authors>Thomas Levesque</authors>
         <projectUrl>https://github.com/thomaslevesque/InternalsVisibleTo.MSBuild</projectUrl>

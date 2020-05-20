@@ -4,7 +4,8 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
 
-  <Target Name="AddInternalsVisibleTo" BeforeTargets="CoreCompile">
+  <Target Name="AddInternalsVisibleTo" BeforeTargets="BeforeCompile">
+
     <ItemGroup Condition="@(InternalsVisibleTo->Count()) &gt; 0">
       <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
         <_Parameter1>%(InternalsVisibleTo.Identity)</_Parameter1>
@@ -16,6 +17,7 @@
         <_Parameter1>$(AssemblyName)%(InternalsVisibleToSuffix.Identity)</_Parameter1>
       </AssemblyAttribute>
     </ItemGroup>
+
   </Target>
 
 </Project>
