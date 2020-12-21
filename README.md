@@ -38,7 +38,7 @@ In fact, it's already possible to declare `InternalsVisibleTo` attributes in the
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
       <_Parameter1>SomeOtherAssembly</_Parameter1>
     </AssemblyAttribute>
-  <ItemGroup>
+  </ItemGroup>
 ```
 
 This package just makes things easier by transforming `<InternalsVisibleTo>` elements into appropriate `<AssemblyAttribute>` elements.
