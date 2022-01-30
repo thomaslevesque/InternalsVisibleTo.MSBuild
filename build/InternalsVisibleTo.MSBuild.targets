@@ -9,12 +9,14 @@
     <ItemGroup Condition="@(InternalsVisibleTo->Count()) &gt; 0">
       <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
         <_Parameter1>%(InternalsVisibleTo.Identity)</_Parameter1>
+        <_Parameter1_TypeName>System.String</_Parameter1_TypeName>
       </AssemblyAttribute>
     </ItemGroup>
     
     <ItemGroup Condition="@(InternalsVisibleToSuffix->Count()) &gt; 0">
       <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
         <_Parameter1>$(AssemblyName)%(InternalsVisibleToSuffix.Identity)</_Parameter1>
+        <_Parameter1_TypeName>System.String</_Parameter1_TypeName>
       </AssemblyAttribute>
     </ItemGroup>
 
