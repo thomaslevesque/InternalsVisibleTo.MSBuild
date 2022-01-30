@@ -1,0 +1,16 @@
+version: '{build}'
+image: Visual Studio 2022
+
+skip_branch_with_pr: true
+
+pull_requests:
+  do_not_increment_build_number: true
+
+build_script:
+- cmd: nuget pack InternalsVisibleTo.MSBuild.nuspec -OutputDirectory artifacts
+
+nuget:
+  disable_publish_on_pr: true
+
+artifacts:
+- path: .\artifacts\*.nupkg
