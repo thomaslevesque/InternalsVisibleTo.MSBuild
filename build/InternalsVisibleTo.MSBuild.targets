@@ -2,23 +2,28 @@
 
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <SdkSupportsInternalsVisibleTo>false</SdkSupportsInternalsVisibleTo>
+    <SdkSupportsInternalsVisibleTo Condition="$([MSBuild]::VersionGreaterThanOrEquals($(NETCoreSdkVersion), '5.0.0'))">true</SdkSupportsInternalsVisibleTo>
   </PropertyGroup>
 
   <Target Name="AddInternalsVisibleTo" BeforeTargets="BeforeCompile">
 
-    <ItemGroup Condition="@(InternalsVisibleTo->Count()) &gt; 0">
+    <ItemGroup Condition="@(InternalsVisibleTo->Count()) &gt; 0 and '$(SdkSupportsInternalsVisibleTo)' == 'false'">
       <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
         <_Parameter1>%(InternalsVisibleTo.Identity)</_Parameter1>
         <_Parameter1_TypeName>System.String</_Parameter1_TypeName>
       </AssemblyAttribute>
     </ItemGroup>
     
-    <ItemGroup Condition="@(InternalsVisibleToSuffix->Count()) &gt; 0">
+    <ItemGroup Condition="@(InternalsVisibleToSuffix->Count()) &gt; 0 and '$(SdkSupportsInternalsVisibleTo)' == 'false'">
       <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
         <_Parameter1>$(AssemblyName)%(InternalsVisibleToSuffix.Identity)</_Parameter1>
         <_Parameter1_TypeName>System.String</_Parameter1_TypeName>
       </AssemblyAttribute>
     </ItemGroup>
+
+    <Warning Condition="'$(SdkSupportsInternalsVisibleTo)' == 'true'"
+             Text="Starting with version 5.0, the .NET SDK has built-in support for InternalsVisibleTo. The functionality provided by the InternalsVisibleTo.MSBuild package has been disabled to avoid conflicts. You should uninstall this package; note that with the .NET SDK feature, the public key is specified in a separate 'Key' attribute, instead of being appended to the assembly name in the 'Include' attribute." />
 
   </Target>
 
