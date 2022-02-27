@@ -4,6 +4,8 @@
 
 Enables declaring `InternalsVisibleTo` items in a .NET project file, rather than declaring them in an AssemblyInfo.cs file.
 
+**IMPORTANT: starting with .NET 5.0, the SDK [already provides support for this](https://github.com/dotnet/sdk/pull/3439). You don't need this package if you're using the .NET 5.0 SDK or later.**
+
 ## How to use
 
 1. Install the `InternalsVisibleTo.MSBuild` NuGet package.
