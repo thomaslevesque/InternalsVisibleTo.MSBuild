@@ -2,8 +2,10 @@
 
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <MSBuild_16_5_0_OrGreater>false</MSBuild_16_5_0_OrGreater>
+    <MSBuild_16_5_0_OrGreater Condition="$([System.Version]::Parse('$(MSBuildVersion)').CompareTo($([System.Version]::Parse('16.5.0')))) &gt;= 0">true</MSBuild_16_5_0_OrGreater>
     <SdkSupportsInternalsVisibleTo>false</SdkSupportsInternalsVisibleTo>
-    <SdkSupportsInternalsVisibleTo Condition="$([MSBuild]::VersionGreaterThanOrEquals($(NETCoreSdkVersion), '5.0.0'))">true</SdkSupportsInternalsVisibleTo>
+    <SdkSupportsInternalsVisibleTo Condition="'$(MSBuild_16_5_0_OrGreater)' == 'true' and $([MSBuild]::VersionGreaterThanOrEquals($(NETCoreSdkVersion), '5.0.0'))">true</SdkSupportsInternalsVisibleTo>
   </PropertyGroup>
 
   <Target Name="AddInternalsVisibleTo" BeforeTargets="BeforeCompile">
